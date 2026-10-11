@@ -1,0 +1,131 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OptiCode </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="brand">
+            <div class="brand-icon">&lt;/&gt;</div>
+            <div>
+                <h1>OptiCode </h1>
+                <p>8085 Assembly Code Optimizer</p>
+            </div>
+        </div>
+        <span class="status">● Ready to optimize</span>
+    </header>
+
+    <main class="container">
+        <section class="intro">
+            <p class="eyebrow">SYSTEM SOFTWARE PROJECT</p>
+            <h2>Write less. Optimize smarter.</h2>
+            <p>Explore assembly code optimization and compare the results.</p>
+        </section>
+
+        <section class="panel">
+            <div class="section-heading">
+                <div>
+                    <h3>Assembly Code Input</h3>
+                    <p>Enter 8085-style assembly instructions below.</p>
+                </div>
+                <span class="tag">INPUT</span>
+            </div>
+
+            <label for="example-select">Choose an example</label>
+            <div class="controls">
+                <select id="example-select">
+                    <option value="Redundant Instructions">1. Redundant Instructions</option>
+                    <option value="Dead-Looking Assignments">2. Repeated Assignments</option>
+                    <option value="Unreachable Code">3. Unreachable Code</option>
+                    <option value="Arithmetic Program">4. Arithmetic Program</option>
+                    <option value="Countdown Loop">5. Countdown Loop</option>
+                    <option value="Data Transfer">6. Data Transfer</option>
+                    <option value="Conditional Jump">7. Conditional Jump</option>
+                    <option value="Memory Operations">8. Memory Operations</option>
+                    <option value="Subroutine">9. Subroutine</option>
+                    <option value="Stack Operations">10. Stack Operations</option>
+                    <option value="Multiple Labels">11. Multiple Labels</option>
+                    <option value="Combined Demo" selected>12. Combined Demo</option>
+                </select>
+                <button id="load-btn" class="secondary">Load Example</button>
+            </div>
+
+            <textarea id="source" spellcheck="false"
+                placeholder="Enter your assembly code here..."></textarea>
+
+            <div class="action-row">
+                <button id="optimize-btn" class="primary"> Optimize Assembly</button>
+                <button id="clear-btn" class="secondary">Clear Code</button>
+            </div>
+            <p id="report" class="message" aria-live="polite">
+                Ready. Load an example or enter your own code.
+            </p>
+        </section>
+
+        <section class="stats-grid">
+            <div class="stat-card">
+                <span>Original instructions</span>
+                <strong id="original-count">—</strong>
+            </div>
+            <div class="stat-card">
+                <span>Optimized instructions</span>
+                <strong id="optimized-count">—</strong>
+            </div>
+            <div class="stat-card">
+                <span>Instructions removed</span>
+                <strong id="removed-count">—</strong>
+            </div>
+            <div class="stat-card">
+                <span>Reduction</span>
+                <strong id="reduction">—</strong>
+            </div>
+        </section>
+
+        <section class="comparison">
+            <div class="panel code-panel">
+                <div class="section-heading">
+                    <div>
+                        <h3>Original Code</h3>
+                        <p>Your input assembly program</p>
+                    </div>
+                    <span class="tag">BEFORE</span>
+                </div>
+                <pre id="original-output" class="code-output">Your original code will appear here.</pre>
+            </div>
+
+            <div class="panel code-panel">
+                <div class="section-heading">
+                    <div>
+                        <h3>Optimized Code</h3>
+                        <p>After applying optimization rules</p>
+                    </div>
+                    <span class="tag optimized-tag">AFTER</span>
+                </div>
+                <pre id="optimized-output" class="code-output">Your optimized code will appear here.</pre>
+                <button id="download-btn" class="secondary download-btn" disabled>
+                    ↓ Download Optimized Code
+                </button>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h3>Optimization Report</h3>
+            <ul id="details">
+                <li>Run the optimizer to see the results.</li>
+            </ul>
+            <p class="note">
+                Educational optimizer: removing NOP instructions may affect
+                timing-sensitive programs. Always review the output before use.
+            </p>
+        </section>
+    </main>
+
+    <footer>OptiCode Studio · System Software · Code Optimization ⚞^. .^⚟ Preeti Mudaliar ⋆. 𐙚 ˚ </footer>
+    <script src="optimizer.js"></script>
+</body>
+</html>
